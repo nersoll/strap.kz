@@ -1,0 +1,272 @@
+
+[
+  {
+    "id": "1",
+    "leatherType": "Коза",
+    "color": "Синий",
+    "hasEdgeFold": false,
+    "images": ["IMG_4810.JPG", "IMG_4811.JPG", "IMG_4812.JPG", "IMG_4813.JPG", "IMG_4814.JPG", "IMG_4815.JPG"]
+  },
+  {
+    "id": "2",
+    "leatherType": "Аллигатор",
+    "color": "Коричневый",
+    "hasEdgeFold": true,
+    "images": ["IMG_4816.JPG", "IMG_4817.JPG", "IMG_4818.JPG", "IMG_4819.JPG", "IMG_4820.JPG"]
+  },
+  {
+    "id": "3",
+    "leatherType": "Коза",
+    "color": "Синий",
+    "hasEdgeFold": false,
+    "images": ["IMG_4845.JPG", "IMG_4844.JPG", "IMG_4843.JPG", "IMG_4841.JPG", "IMG_4840.JPG"]
+  },
+  {
+    "id": "4",
+    "leatherType": "Аллигатор",
+    "color": "Черный",
+    "hasEdgeFold": false,
+    "images": ["IMG_4846.JPG", "IMG_4847.JPG", "IMG_4848.JPG", "IMG_4849.JPG", "IMG_4850.JPG"]
+  },
+  {
+    "id": "5",
+    "leatherType": "Коза",
+    "color": "Синий",
+    "hasEdgeFold": false,
+    "images": ["IMG_4852.JPG", "IMG_4853.JPG", "IMG_4854.JPG", "IMG_4855.JPG", "IMG_4856.JPG"]
+  },
+  {
+    "id": "6",
+    "leatherType": "Аллигатор",
+    "color": "Черный",
+    "hasEdgeFold": true,
+    "images": ["IMG_4869.JPG", "IMG_4870.JPG", "IMG_4871.JPG", "IMG_4874.JPG", "IMG_4875.JPG"]
+  },
+  {
+    "id": "7",
+    "leatherType": "Коза",
+    "color": "Черный",
+    "hasEdgeFold": true,
+    "images": ["IMG_4883.JPG", "IMG_4884.JPG", "IMG_4885.JPG", "IMG_4886.JPG", "IMG_4887.JPG"]
+  },
+  {
+    "id": "8",
+    "leatherType": "Теленок",
+    "color": "Черный",
+    "hasEdgeFold": true,
+    "images": ["IMG_4917.JPG", "IMG_4918.JPG", "IMG_4919.JPG", "IMG_4921.JPG", "IMG_4922.JPG"]
+  },
+  {
+    "id": "9",
+    "leatherType": "Аллигатор",
+    "color": "Красный",
+    "hasEdgeFold": true,
+    "images": ["IMG_4947.JPG", "IMG_4948.JPG", "IMG_4949.JPG"]
+  },
+  {
+    "id": "10",
+    "leatherType": "Аллигатор",
+    "color": "Черный",
+    "hasEdgeFold": true,
+    "images": ["IMG_4934.JPG", "IMG_4935.JPG", "IMG_4937.JPG"]
+  },
+  {
+    "id": "11",
+    "leatherType": "Аллигатор",
+    "color": "Зеленый",
+    "hasEdgeFold": true,
+    "images": ["IMG_4956.JPG", "IMG_4957.JPG", "IMG_4958.JPG"]
+  },
+  {
+    "id": "12",
+    "leatherType": "Аллигатор",
+    "color": "Черный",
+    "hasEdgeFold": true,
+    "images": ["IMG_5092.JPG", "IMG_5093.JPG", "IMG_5094.JPG"]
+  },
+  {
+    "id": "13",
+    "leatherType": "Акула",
+    "color": "Черный",
+    "hasEdgeFold": true,
+    "images": ["IMG_0429.JPG"]
+  },
+
+    {
+    "id": "14",
+    "leatherType": "Акула",
+    "color": "Коричневый",
+    "hasEdgeFold": true,
+    "images": ["IMG_1730.JPG"]
+  },
+  {
+    "id": "15",
+    "leatherType": "Страус",
+    "color": "Коричневый",
+    "hasEdgeFold": false,
+    "images": ["IMG_1791.JPG"]
+  },
+  {
+    "id": "16",
+    "leatherType": "Скат",
+    "color": "Черный",
+    "hasEdgeFold": true,
+    "images": ["IMG_1794.JPG"]
+  },
+  {
+    "id": "17",
+    "leatherType": "Страус",
+    "color": "Коричневый",
+    "hasEdgeFold": true,
+    "images": ["IMG_1836.JPG"]
+  },
+  {
+    "id": "18",
+    "leatherType": "Игуана",
+    "color": "Белый",
+    "hasEdgeFold": true,
+    "images": ["IMG_2761.JPG", "IMG_2762.JPG", "IMG_2764.JPG"]
+  },
+    {
+    "id": "19",
+    "leatherType": "Акула",
+    "color": "Синий",
+    "hasEdgeFold": true,
+    "images": ["sb.JPG"]
+  },
+  {
+    "id": "20",
+    "leatherType": "Акула",
+    "color": "Зеленый",
+    "hasEdgeFold": true,
+    "images": ["sg.JPG"]
+  },
+
+
+    {
+    "id": "21",
+    "leatherType": "Теленок",
+    "color": "Коричневый",
+    "hasEdgeFold": true,
+    "images": ["IMG_3531.JPG", "IMG_3532.JPG", "IMG_3534.JPG"]
+  },
+  {
+    "id": "22",
+    "leatherType": "Теленок",
+    "color": "Черный",
+    "hasEdgeFold": true,
+    "images": ["IMG_3583.JPG", "IMG_3585.JPG", "IMG_3589.JPG"]
+  },
+  {
+    "id": "23",
+    "leatherType": "Аллигатор",
+    "color": "Черный",
+    "hasEdgeFold": true,
+    "images": ["IMG_4934.JPG", "IMG_4935.JPG", "IMG_4937.JPG"]
+  },
+  {
+    "id": "24",
+    "leatherType": "Игуана",
+    "color": "Коричневый",
+    "hasEdgeFold": true,
+    "images": ["IMG_3598.JPG", "IMG_3601.JPG"]
+  },
+  {
+    "id": "25",
+    "leatherType": "Теленок",
+    "color": "Черный",
+    "hasEdgeFold": false,
+    "images": ["IMG_3662.JPG", "IMG_3663.JPG", "IMG_3665.JPG"]
+  },
+  {
+    "id": "26",
+    "leatherType": "Коза",
+    "color": "Синий",
+    "hasEdgeFold": true,
+    "images": ["IMG_3720.JPG"]
+  },
+  {
+    "id": "27",
+    "leatherType": "Коза",
+    "color": "Красный",
+    "hasEdgeFold": true,
+    "images": ["IMG_3719.JPG"]
+  },
+    {
+    "id": "28",
+    "leatherType": "Игуана",
+    "color": "Коричневый",
+    "hasEdgeFold": true,
+    "images": ["IMG_3790.JPG", "IMG_3791.JPG", "IMG_3792.JPG", "IMG_3793.JPG", "IMG_3794.JPG"]
+  },
+  {
+    "id": "29",
+    "leatherType": "Игуана",
+    "color": "Коричневый",
+    "hasEdgeFold": true,
+    "images": ["IMG_3868.JPG", "IMG_3869.JPG"]
+  },
+  {
+    "id": "30",
+    "leatherType": "Игуана",
+    "color": "Белый",
+    "hasEdgeFold": true,
+    "images": ["IMG_3987.JPG", "IMG_3988.JPG", "IMG_4937.JPG"]
+  },
+  {
+    "id": "31",
+    "leatherType": "Коза",
+    "color": "Коричневый",
+    "hasEdgeFold": false,
+    "images": ["IMG_4010.JPG"]
+  },
+    {
+    "id": "32",
+    "leatherType": "Коза",
+    "color": "Коричневый",
+    "hasEdgeFold": false,
+    "images": ["IMG_4052.JPG"]
+  },
+  {
+    "id": "33",
+    "leatherType": "Коза",
+    "color": "Коричневый",
+    "hasEdgeFold": true,
+    "images": ["IMG_4188.JPG", "IMG_4189.JPG"]
+  },
+  {
+    "id": "34",
+    "leatherType": "Коза",
+    "color": "Синий",
+    "hasEdgeFold": false,
+    "images": ["IMG_4338.JPG", "IMG_4339.JPG", "IMG_4351.JPG"]
+  },
+     {
+    "id": "35",
+    "leatherType": "Игуана",
+    "color": "Синий",
+    "hasEdgeFold": false,
+    "images": ["IMG_4494.JPG"]
+  },
+    {
+    "id": "36",
+    "leatherType": "Скат",
+    "color": "Черный",
+    "hasEdgeFold": false,
+    "images": ["black_sting.JPG"]
+  },
+     {
+    "id": "37",
+    "leatherType": "Игуана",
+    "color": "Черный",
+    "hasEdgeFold": true,
+    "images": ["black_iguana.JPG"]
+  },
+       {
+    "id": "38",
+    "leatherType": "Крокодил",
+    "color": "Коричневый",
+    "hasEdgeFold": true,
+    "images": ["IMG_5151.JPG", "IMG_5152.JPG", "IMG_5153.JPG"]
+  }
+]

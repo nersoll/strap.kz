@@ -1,0 +1,209 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import Contact from "@components/Contact/Contact.astro";
+import { portfolioData } from '@config/belt-info';
+import { pricingData } from "../config/main"; // Подключаем наш общий файл конфигурации
+
+// Сопоставляем виды кожи из main.ts с фотографиями из портфолио
+const leathersWithImages = pricingData.map(leather => {
+  const sampleImages = portfolioData
+    .filter(item => item.leatherType === leather.name)
+    .map(item => item.images[0])
+    .filter(Boolean);
+
+  return {
+    ...leather,
+    images: sampleImages
+  };
+});
+---
+
+<Layout title="Виды кожи | Strap.kz" description="Премиальные виды кожи для часовых ремешков">
+  <section class="max-w-7xl mx-auto px-4 py-16">
+    
+    <header class="text-center mb-16">
+      <h1 class="text-4xl md:text-5xl font-serif text-stone-900 mb-4">Архив материалов</h1>
+      <p class="text-stone-500 max-w-2xl mx-auto leading-relaxed">
+        Для верха ремешка используется премиальная телячья и козья кожа от французских производителей (ALRAN, DEGERMAN, HAAS), а также экзотические кожи итальянской и французской выделки.
+      </p>
+    </header>
+
+    <div class="mb-12 bg-amber-50 border border-amber-200/60 rounded-2xl p-6 flex flex-col sm:flex-row items-center gap-4 max-w-4xl mx-auto text-center sm:text-left">
+      <div class="bg-amber-700 text-white p-3 rounded-full shrink-0">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+      </div>
+      <div>
+        <h4 class="font-medium text-stone-900 mb-1">Цвет нужно уточнять</h4>
+        <p class="text-sm text-stone-600">Каждый тип кожи доступен в различных цветах. Ниже представлены примеры работ из этого материала в разных оттенках.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      {leathersWithImages.map((item) => (
+        <div class="leather-card group bg-white border border-stone-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
+          
+          <div class="relative aspect-[4/3] bg-stone-100 overflow-hidden">
+            {item.images.length > 0 ? (
+              <div class="carousel-container h-full w-full relative">
+                <div class="carousel-track h-full flex transition-transform duration-500 ease-out">
+                  {item.images.map((img) => (
+                    <div class="carousel-slide">
+                      <Image 
+                        src={img} 
+                        alt={item.name} 
+                        width={600}
+                        height={450}
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+                
+                {item.images.length > 1 && (
+                  <>
+                    <button class="prev-btn absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity z-10 w-8 h-8 flex items-center justify-center">
+                      <svg class="w-4 h-4 text-stone-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button class="next-btn absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity z-10 w-8 h-8 flex items-center justify-center">
+                      <svg class="w-4 h-4 text-stone-800" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                      {item.images.map((_, i) => (
+                        <div class={`dot h-1.5 w-1.5 rounded-full bg-white/50 transition-all ${i === 0 ? 'bg-white w-3' : ''}`}></div>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            ) : (
+              <div class="w-full h-full flex items-center justify-center text-stone-400 text-sm italic">
+                Фото в архиве пока нет
+              </div>
+            )}
+          </div>
+          
+          <div class="p-6 flex flex-col flex-1">
+            <h3 class="text-xl font-serif font-medium text-stone-900 mb-2">{item.name}</h3>
+            {/* Используем поле description из вашего main.ts */}
+            <p class="text-sm text-stone-500 mb-6 flex-1">{item.description}</p>
+            
+            <div class="pt-4 border-t border-stone-100 flex items-center justify-between">
+              <span class="text-xs text-stone-400 uppercase tracking-widest">Стоимость</span>
+              <span class="font-bold text-amber-700">От {item.price} ₸</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 items-stretch">
+      <div class="bg-stone-900 text-white rounded-3xl p-8 lg:p-10 flex flex-col justify-center">
+        <span class="text-xs uppercase tracking-widest text-amber-500 font-bold mb-2">Подклад ремешка</span>
+        <h3 class="text-3xl font-serif mb-4">Кожа Zermatt от HAAS</h3>
+        <p class="text-stone-300 text-sm mb-6 leading-relaxed">
+          Во всех наших ремешках используется специализированная французская телячья кожа Zermatt. Это бескомпромиссный стандарт, гарантирующий комфорт и долговечность.
+        </p>
+        <ul class="space-y-3 text-sm text-stone-300">
+          <li class="flex items-center gap-3"><span class="text-amber-500">✓</span> Водоотталкивающая (не впитывает пот)</li>
+          <li class="flex items-center gap-3"><span class="text-amber-500">✓</span> Гипоаллергенная (безопасна для кожи)</li>
+          <li class="flex items-center gap-3"><span class="text-amber-500">✓</span> Повышенная износостойкость</li>
+        </ul>
+      </div>
+      <div class="bg-stone-50 border border-stone-200 rounded-3xl p-8 lg:p-10">
+        <h3 class="text-2xl font-serif text-stone-900 mb-6">Возможности выбора</h3>
+        <div class="space-y-4 text-sm text-stone-600">
+          <div class="bg-white p-4 rounded-xl border border-stone-100 shadow-sm">
+            <span class="block font-medium text-stone-900 mb-1">Кожа и нить</span>
+            Цвет и фактура кожи, а также цвет и толщина прошивки.
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-stone-100 shadow-sm">
+            <span class="block font-medium text-stone-900 mb-1">Габариты</span>
+            Длина, ширина и градация толщины (подиум) под ваши часы.
+          </div>
+          <div class="bg-white p-4 rounded-xl border border-stone-100 shadow-sm">
+            <span class="block font-medium text-stone-900 mb-1">Обработка края</span>
+            Вариант исполнения уреза под покраску или загибом края (Rembordé).
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <Contact/>
+  </section>
+</Layout>
+
+<script>
+  function initCarousels() {
+    const cards = document.querySelectorAll('.leather-card');
+
+    cards.forEach(card => {
+      const track = card.querySelector('.carousel-track') as HTMLElement;
+      const slides = card.querySelectorAll('.carousel-slide');
+      const nextBtn = card.querySelector('.next-btn');
+      const prevBtn = card.querySelector('.prev-btn');
+      const dots = card.querySelectorAll('.dot');
+      
+      if (!track || slides.length <= 1) return;
+
+      let currentIndex = 0;
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        dots.forEach((dot, index) => {
+          if (index === currentIndex) {
+            dot.classList.add('bg-white', 'w-3');
+            dot.classList.remove('bg-white/50');
+          } else {
+            dot.classList.remove('bg-white', 'w-3');
+            dot.classList.add('bg-white/50');
+          }
+        });
+      }
+
+      nextBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+      });
+
+      prevBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initCarousels);
+  document.addEventListener('astro:page-load', initCarousels);
+</script>
+
+<style>
+  .carousel-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+  }
+
+  .carousel-slide {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .prev-btn, .next-btn {
+      opacity: 1 !important;
+    }
+  }
+</style>

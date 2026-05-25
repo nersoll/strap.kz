@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin.php
+Disallow: /hidden-modals-data
+Disallow: /api/
+Disallow: /config/
+
+# Указываем роботам путь к карте сайта для ускорения индексации
+Sitemap: https://strap.kz/sitemap-index.xml

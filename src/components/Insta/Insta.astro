@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import insta1 from "@assets/images/Insta1.jpg";
+import insta2 from "@assets/images/Insta2.jpg";
+import insta3 from "@assets/images/Insta3.jpg";
+import insta4 from "@assets/images/Insta4.jpg";
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props as Props;
+---
+<section id="insta"
+    class="mx-auto max-w-md scroll-mt-10 px-4 py-8 md:max-w-6xl md:py-12"
+    class:list={[className]}>
+    <div class=" flex flex-col overflow-hidden rounded-2xl bg-gray-50 md:flex-row">
+    <div class="flex flex-col justify-center p-8 md:w-1/2 md:p-12 lg:p-16">
+        <div class="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary-700">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+            <p class="text-2xl">Instagram</p>
+        </div>
+        
+        <h3 class="mb-4 text-3xl font-light leading-tight text-gray-900 md:text-4xl">
+            Искусство в деталях
+        </h3>
+        
+        <p class="mb-8 max-w-md text-gray-600 leading-relaxed">
+            Загляните за кулисы: процесс создания, фактуры экзотической кожи и готовые заказы крупным планом.
+        </p>
+
+        <a 
+            href="https://instagram.com/STRAP.KZ" 
+            target="_blank" 
+            class="group inline-flex w-fit items-center gap-3 rounded-full bg-gray-900 px-6 py-3.5 text-sm font-medium text-white transition-all hover:bg-gray-800 hover:shadow-lg active:scale-95"
+        >
+            Смотреть работы
+            <svg class="transition-transform group-hover:translate-x-1" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+        </a>
+    </div>
+
+    
+    <div class="grid grid-cols-2 gap-1 md:w-1/2 bg-white">
+        <div class="aspect-square w-full overflow-hidden bg-gray-200">
+            <Image width={400} height={400} src={insta1} alt="Процесс создания ремешка" class="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+        </div>
+        <div class="aspect-square w-full overflow-hidden bg-gray-200">
+            <Image width={400} height={400} src={insta2} alt="Готовый кожаный ремешок" class="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+        </div>
+        <div class="aspect-square w-full overflow-hidden bg-gray-200">
+            <Image width={400} height={400} src={insta3} alt="Фактура премиальной кожи" class="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+        </div>
+        <div class="aspect-square w-full overflow-hidden bg-gray-200">
+            <Image width={400} height={400} src={insta4} alt="Ремешок на часах клиента" class="h-full w-full object-cover transition-transform duration-500 hover:scale-105" />
+        </div>
+    </div>
+    </div>
+</section>

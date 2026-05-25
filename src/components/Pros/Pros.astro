@@ -1,0 +1,78 @@
+---
+/**
+ * * Почему выбирают нас — Секция с иконками
+ */
+
+
+
+
+const advantages = [
+  {
+    title: "Сроки изготовления",
+    description: "Средний срок — от 3 до 14 рабочих дней. Зависит от сложности изделия и текущей загруженности мастерской.",
+    // Иконка часов
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`
+  },
+  {
+    title: "Привлекательные цены",
+    description: "Цены от 40 000 до 150 000 тенге. Качество мирового уровня без переплат за иностранный бренд и логистику.",
+    // Иконка ценника
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6l6 6"></path><path d="M9 12H21"></path><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path></svg>`
+  },
+  {
+    title: "Колоссальный опыт",
+    description: "Тысячи выполненных заказов. Мы воссоздаем оригинальные ремешки до мельчайших деталей, сохраняя заводскую эргономику.",
+    // Иконка награды/опыта
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15l-2 5l2 -1l2 1z"></path><path d="M12 15c1.657 0 3 -1.343 3 -3s-1.343 -3 -3 -3s-3 1.343 -3 3s1.343 3 3 3z"></path><path d="M15 9l2 -5l-3 2l1 3"></path><path d="M9 9l-2 -5l3 2l-1 3"></path></svg>`
+  },
+  {
+    title: "Премиальная кожа",
+    description: "Кожа от мануфактур ALRAN и HAAS. В наличии экзотика: крокодил, страус, акула и скат лучшей выделки.",
+    // Иконка текстуры/слоев
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"></path><path d="M12 12l8-4.5"></path><path d="M12 12v9"></path><path d="M12 12L4 7.5"></path></svg>`
+  },
+  {
+    title: "Качество в деталях",
+    description: "Ручной седельный шов вощеной нитью и усиление мест крепления нетканым материалом для защиты от деформации.",
+    // Иконка инструментов/деталей
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>`
+  },
+  {
+    title: "Подклад Zermatt",
+    description: "Французская кожа Zermatt от HAAS: гипоаллергенная, водоотталкивающая и максимально приятная к телу.",
+    // Иконка щита (защита/гипоаллергенность)
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`
+  }
+];
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16">
+  <div class="mb-16 text-center">
+    <h2 class="text-4xl lg:text-6xl font-bold mb-6 tracking-tight font-heading-1">Почему выбирают нас</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+      Бескомпромиссное качество материалов и внимание к каждому стежку.
+    </p>
+  </div>
+
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    {advantages.map((item) => (
+      <div class="group flex flex-col items-start p-2">
+        <div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-primary-600 transition-colors group-hover:bg-primary-600 group-hover:text-white">
+          <Fragment set:html={item.icon} />
+        </div>
+        
+        <h3 class="mb-3 text-xl font-bold tracking-tight text-gray-900">
+          {item.title}
+        </h3>
+        
+        <p class="text-gray-600 leading-relaxed">
+          {item.description}
+        </p>
+      </div>
+    ))}
+  </div>
+
+
+
+
+</section>

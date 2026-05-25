@@ -1,0 +1,66 @@
+---
+/**
+ * Pricing Grid (6 Cards, 3x2 Grid) - Динамическая версия с компонентом Image
+ */
+import Button from "@components/Button/Button.astro";
+import { Image } from "astro:assets";
+import { pricingData } from "@config/main"; // Импортируем массив из main.ts
+
+// Глобально находим все картинки в папке Portfolio.
+// Важно: путь в функции должен быть относительным до вашей папки с картинками!
+const imagesGlob = import.meta.glob<{ default: ImageMetadata }>('/src/assets/images/Portfolio/*.{jpeg,jpg,png,webp,JPG,PNG}');
+const visiblePricingData = pricingData.filter(plan => plan.main_page_visible === true);
+---
+
+<section id="pricing" class="mx-auto max-w-6xl scroll-mt-10 px-4 py-8 md:py-12">
+    <div class="mx-auto max-w-6xl text-center">
+        <h2 class="h2 text-pretty uppercase">Каталог кожи</h2>
+    </div>
+
+    <div class="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {
+            visiblePricingData.map((plan) => {
+                // Динамически ищем нужный файл в glob по пути из JSON.
+                // Админка будет сохранять в JSON строку вида: "/src/assets/images/Portfolio/IMG_4816.jpg"
+                const imageLoader = imagesGlob[plan.image];
+
+                return (
+                    <div class="flex w-full flex-col h-195" class:list={[{ "bg-primary-200": plan.featured }]}>
+                        <div class="aspect-[3/4] h-auto w-full overflow-hidden bg-stone-100 flex items-center justify-center">
+                            {imageLoader ? (
+                                <Image 
+                                    src={imageLoader()} 
+                                    alt={plan.name} 
+                                    width={450} 
+                                    densities={[1.5, 2]} 
+                                    class="h-full w-full object-cover" 
+                                />
+                            ) : (
+                                <span class="text-xs text-stone-400 p-4 text-center">
+                                    Ошибка пути: <br/> {plan.image}
+                                </span>
+                            )}
+                        </div>
+                        <div class="border-primary-200 flex h-full flex-col justify-between border-2 border-t-0 pt-8 pb-8">
+                            <div>
+                                <h3 class="h3 font-heading-1 text-center pr-4 pl-4">{plan.name}</h3>
+                                <ul class="mt-4 flex flex-col gap-3 px-8">
+                                    {plan.features.map((feature) => (
+                                        <li class="leading-snug lg:text-lg lg:leading-snug">{feature}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <p class="font-decorative text-base-800 mt-6 flex justify-center text-center text-[3rem] leading-none">
+                                от {plan.price}₸
+                            </p>
+                        </div>
+                    </div>
+                );
+            })
+        }
+    </div>
+
+    <div class="mt-12 flex justify-center">
+        <Button href="/strap" variant="outline" class="px-15">Все Товары</Button>
+    </div>
+</section>

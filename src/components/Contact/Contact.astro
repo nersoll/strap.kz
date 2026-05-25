@@ -1,0 +1,122 @@
+---
+/**
+ * * Contact section for the website
+ */
+import { Image } from "astro:assets";
+import Button from "@components/Button/Button.astro";
+
+interface Props {
+    class?: string;
+}
+
+const { class: className } = Astro.props as Props;
+---
+
+<section
+    id="contact"
+    class="mx-auto max-w-md scroll-mt-10 px-4 py-8 md:max-w-6xl md:py-12"
+    class:list={[className]}
+>
+    
+    
+
+    <h2 class="h2 mt-15  lg:text-4xl">Свяжитесь с нами!</h2>
+
+    <div class="grid gap-y-10 md:grid-cols-2 mt-8">
+
+        <div class="border-primary-300 md:border-r md:pr-12 lg:pr-20 md:pl-12">
+            <p class="description text-lg">
+                Есть вопросы или вы готовы заказать? Я здесь, чтобы помочь! Заполните форму, и я свяжусь с вами в течение 1-2 рабочих дней. Давайте вместе создадим ремешок вашей мечты!
+            </p>
+            
+            <div class="mt-8 space-y-3 text-lg">
+                <p class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-neutral-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    <strong>Instagram:</strong> 
+                    <a href="https://www.instagram.com/strap.kz/" target="_blank" class="hover:text-primary-500 transition-colors">@strap.kz</a>
+                </p>
+
+                <p class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-neutral-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <strong>WhatsApp / Тел:</strong> 
+                    <a href="https://wa.me/77760001616" class="hover:text-primary-500 transition-colors">8 (776) 000-16-16</a>
+                </p>
+            </div>
+            
+            <Button 
+                variant="outline" 
+                arrow="right" 
+                href="https://wa.me/77760001616?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%AF%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D1%80%D0%B5%D0%BC%D0%B5%D1%88%D0%BA%D0%B0" 
+                class="mt-10"
+            >
+                Написать в WhatsApp
+            </Button>
+        </div>
+
+        <div class="md:pl-12 lg:pl-20">
+            <div class="w-full overflow-hidden rounded-lg shadow-sm border border-primary-200">
+                <iframe 
+                    class="w-full aspect-video md:aspect-square" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.770222444!2d76.9286!3d43.2389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDE0JzIwLjAiTiA3Nis1NSc0My4wIkU!5e0!3m2!1sru!2skz!4v1700000000000" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p class="description mt-6 text-lg">
+                <strong>Адрес:</strong> Алматы, ул. Байтурсынова 68 (уг. ул. Шевченко), 3 этаж, 15 офис
+            </p>
+        </div>
+    </div>
+
+    <div class="mt-16 grid gap-10 border-t border-primary-300 pt-12 md:grid-cols-2 md:px-12">
+        <div>
+            <h3 class="text-2xl font-bold mb-6">Доставка</h3>
+            <div class="space-y-6 text-base leading-relaxed">
+                <div>
+                    <h4 class="font-bold text-primary-600">По Казахстану (дистанционно):</h4>
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li><strong>CDEK / Rika:</strong> До двери (только крупные города). Оплата за транспортировку при получении.</li>
+                        <li><strong>Казпочта:</strong> В любой регион.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primary-600">По Алматы:</h4>
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li><strong>Самовывоз:</strong> В удобное время (Байтурсынова 68 / Шевченко).</li>
+                        <li><strong>Яндекс.Курьер:</strong> По текущим тарифам сервиса.</li>
+                    </ul>
+                </div>
+                <p class="text-sm italic text-gray-600 bg-gray-50 p-3 rounded">
+                    При необходимости изготовления по вашему образцу, вы можете отправить старый ремешок или часы через CDEK (пункт выдачи: ул. Шевченко 118).
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="text-2xl font-bold mb-6">Оплата</h3>
+            <div class="space-y-4 text-base">
+                <div class="flex gap-4 items-start">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold">1</span>
+                    <p>Внесение <strong>50% предоплаты</strong> для подтверждения заказа и начала работ.</p>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold">2</span>
+                    <p>Мы уведомляем вас о готовности и отправляем фото/видео результата.</p>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold">3</span>
+                    <p>Вы оплачиваете оставшиеся <strong>50% стоимости</strong>, после чего осуществляется отправка или выдача изделия.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

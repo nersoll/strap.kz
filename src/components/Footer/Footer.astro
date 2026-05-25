@@ -1,0 +1,36 @@
+---
+import SiteLogo from "@components/SiteLogo/SiteLogo.astro";
+import siteData from "@config/siteData.json";
+import { Icon } from "astro-icon/components";
+
+import FooterLink from "./FooterLink.astro";
+
+const today = new Date();
+---
+
+<footer class="bg-base-100/40 mt-12 flex flex-col items-center justify-center py-8">
+	<div class="site-container">
+		<!-- footer links -->
+		<div
+			class="flex w-full flex-col items-center justify-between gap-2 text-lg md:grid md:grid-cols-5"
+		>
+			<div class="flex justify-center py-2 text-center md:hidden">
+				<SiteLogo />
+			</div>
+			<div class="col-span-2 flex justify-end gap-4">
+				<FooterLink href="/">Главная</FooterLink>
+				<FooterLink href="/portfolio">Портфолио</FooterLink>
+			</div>
+			<div class="hidden justify-center text-center md:flex">
+				<SiteLogo />
+			</div>
+			<div class="flex gap-4 md:col-span-2">
+				<FooterLink href="/strap">Ремешки</FooterLink>
+				<FooterLink href="https://www.instagram.com/strap.kz/">Instagram</FooterLink>
+			</div>
+		</div>
+
+
+
+	</div>
+</footer>

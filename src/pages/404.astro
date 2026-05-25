@@ -1,0 +1,24 @@
+---
+// main layout
+// components
+import Button from "@components/Button/Button.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="404" description="Error 404 page not found." noindex={true}>
+	<section class="site-container pt-36 text-center md:pt-44">
+		<div class="mx-auto max-w-xl px-4 text-center">
+			<h1 class="h1">Страница не найдена!</h1>
+			<p class="description mt-4">
+				Извините, мы не нашли страницу, которую вы искали.
+			</p>
+
+			<div class="mt-8 flex justify-center">
+				<Button variant="primary" href="/">Вернуться на главную</Button>
+			</div>
+			<p style="margin: 10vh;">
+				Сайт был сделан<b><a href="https://www.linkedin.com/in/alexey-pak-994392221/"> Алексеем Пак</a></b>. 
+			</p>
+		</div>
+	</section>
+</BaseLayout>

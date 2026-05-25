@@ -1,0 +1,42 @@
+/* buttons, 4 types "primary", "secondary", "outline", "ghost" */
+.button {
+	@apply font-heading-1 flex items-center justify-center rounded-none px-4 py-2 text-lg tracking-wide uppercase transition duration-200;
+	@apply active:opacity-80;
+	@apply disabled:pointer-events-none;
+	@apply transition-all duration-500 ease-in-out;
+}
+
+.button--primary {
+	@apply bg-primary-200 text-base-900;
+	@apply hover:bg-primary-200/80;
+	@apply focus-visible:ring-primary-300;
+	@apply transition-all duration-500 ease-in-out;
+}
+
+.button--secondary {
+	@apply border-2;
+	/* @apply hover:border-opacity-80; */
+	@apply focus-visible:ring-primary-200;
+	@apply transition-all duration-500 ease-in-out;
+    @apply hover:border-primary-250/80 hover:bg-primary-250 hover:text-white;
+	
+	@apply focus-visible:ring-primary-200;
+	@apply transition-all duration-500 ease-in-out;
+}
+
+.button--outline {
+    @apply border-primary-200 text-base-900 border-2;
+    /* Added bg-transparent to ensure a clean starting state */
+    @apply bg-transparent transition-colors duration-200; 
+    
+    @apply hover:border-primary-250/80 hover:bg-primary-250 hover:text-white;
+    
+    @apply focus-visible:ring-primary-200;
+	@apply transition-all duration-500 ease-in-out;
+}
+
+.button--ghost {
+	@apply text-base-800;
+	@apply hover:opacity-80;
+	@apply transition-all duration-500 ease-in-out;
+}
